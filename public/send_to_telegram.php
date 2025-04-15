@@ -1,7 +1,7 @@
 <?php
 // Telegram Bot API credentials
 $botToken = 'YOUR_BOT_TOKEN'; // Replace with your bot token
-$chatId = '@MENEGKindReviews'; // The username or chat ID to receive messages
+$chatId = '1884010038'; // The username or chat ID to receive messages
 
 // Get form data
 $name = isset($_POST['name']) ? $_POST['name'] : 'Не указано';

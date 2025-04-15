@@ -44,18 +44,18 @@ const Services: React.FC = () => {
   };
 
   const serviceIcons = [
-    { icon: "🛡️", color: "#4b7bec", bg: "rgba(75, 123, 236, 0.1)" },
-    { icon: "✅", color: "#20bf6b", bg: "rgba(32, 191, 107, 0.1)" },
-    { icon: "🔄", color: "#f7b731", bg: "rgba(247, 183, 49, 0.1)" },
-    { icon: "📊", color: "#eb3b5a", bg: "rgba(235, 59, 90, 0.1)" },
-    { icon: "💬", color: "#3867d6", bg: "rgba(56, 103, 214, 0.1)" }
+    { icon: "🛡️", color: "#000000", bg: "rgba(0, 0, 0, 0.05)", alt: "Безопасность" },
+    { icon: "✅", color: "#000000", bg: "rgba(0, 0, 0, 0.05)", alt: "Гарантия" },
+    { icon: "🔄", color: "#000000", bg: "rgba(0, 0, 0, 0.05)", alt: "Удобство" },
+    { icon: "📊", color: "#000000", bg: "rgba(0, 0, 0, 0.05)", alt: "Отчётность" },
+    { icon: "💬", color: "#000000", bg: "rgba(0, 0, 0, 0.05)", alt: "Поддержка" }
   ];
 
   const benefitIcons = [
-    { icon: "❤️", percent: "87%" },
-    { icon: "🏆", percent: "65%" },
-    { icon: "👥", percent: "80%" },
-    { icon: "🛡️", percent: "95%" }
+    { icon: "❤️", percent: "87%", alt: "Лояльность" },
+    { icon: "🏆", percent: "65%", alt: "Рейтинг" },
+    { icon: "👥", percent: "80%", alt: "Клиенты" },
+    { icon: "🛡️", percent: "95%", alt: "Защита" }
   ];
   
   return (
@@ -73,7 +73,7 @@ const Services: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           ref={servicesRef}
         >
-          <h2 className="section-title">За что вы платите</h2>
+          <h2 className="section-title" id="services-title">За что вы платите</h2>
           <p className="section-subtitle">Профессиональный подход к каждому клиенту</p>
         </motion.div>
         
@@ -82,6 +82,8 @@ const Services: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate={servicesInView ? "visible" : "hidden"}
+          role="list"
+          aria-label="Наши услуги"
         >
           <motion.div 
             className="service-card"
@@ -89,14 +91,16 @@ const Services: React.FC = () => {
             whileHover={{ 
               y: -10, 
               boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)",
-              backgroundColor: "rgba(75, 123, 236, 0.03)" 
+              backgroundColor: "rgba(0, 0, 0, 0.03)" 
             }}
+            role="listitem"
           >
             <div 
               className="service-icon"
               style={{ backgroundColor: serviceIcons[0].bg }}
+              aria-hidden="true"
             >
-              <span className="icon">{serviceIcons[0].icon}</span>
+              <span className="icon" role="img" aria-label={serviceIcons[0].alt}>{serviceIcons[0].icon}</span>
             </div>
             <h3>Минимум риска</h3>
             <p>Отзывы публикуют реальные люди со своих личных аккаунтов, которые находятся в вашем регионе. Никаких ботов и риска блокировки профиля.</p>
@@ -105,6 +109,7 @@ const Services: React.FC = () => {
               initial={{ width: 0 }}
               whileInView={{ width: "40%" }}
               transition={{ duration: 1, delay: 0.3 }}
+              aria-hidden="true"
             ></motion.div>
           </motion.div>
           
@@ -114,14 +119,16 @@ const Services: React.FC = () => {
             whileHover={{ 
               y: -10, 
               boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)",
-              backgroundColor: "rgba(32, 191, 107, 0.03)" 
+              backgroundColor: "rgba(0, 0, 0, 0.03)" 
             }}
+            role="listitem"
           >
             <div 
               className="service-icon"
               style={{ backgroundColor: serviceIcons[1].bg }}
+              aria-hidden="true"
             >
-              <span className="icon">{serviceIcons[1].icon}</span>
+              <span className="icon" role="img" aria-label={serviceIcons[1].alt}>{serviceIcons[1].icon}</span>
             </div>
             <h3>Гарантия на отзывы</h3>
             <p>Если наш отзыв не опубликовался или был удалён, мы бесплатно опубликуем новый. Гарантия действует целый год!</p>
@@ -130,7 +137,7 @@ const Services: React.FC = () => {
               initial={{ width: 0 }}
               whileInView={{ width: "60%" }}
               transition={{ duration: 1, delay: 0.5 }}
-              style={{ backgroundColor: "#20bf6b" }}
+              aria-hidden="true"
             ></motion.div>
           </motion.div>
           
@@ -140,14 +147,16 @@ const Services: React.FC = () => {
             whileHover={{ 
               y: -10, 
               boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)",
-              backgroundColor: "rgba(247, 183, 49, 0.03)" 
+              backgroundColor: "rgba(0, 0, 0, 0.03)" 
             }}
+            role="listitem"
           >
             <div 
               className="service-icon"
               style={{ backgroundColor: serviceIcons[2].bg }}
+              aria-hidden="true"
             >
-              <span className="icon">{serviceIcons[2].icon}</span>
+              <span className="icon" role="img" aria-label={serviceIcons[2].alt}>{serviceIcons[2].icon}</span>
             </div>
             <h3>Удобство</h3>
             <p>Минимум затрат вашего времени. Мы самостоятельно придумаем отзывы и проконтролируем равномерность их публикации.</p>
@@ -156,7 +165,7 @@ const Services: React.FC = () => {
               initial={{ width: 0 }}
               whileInView={{ width: "75%" }}
               transition={{ duration: 1, delay: 0.7 }}
-              style={{ backgroundColor: "#f7b731" }}
+              aria-hidden="true"
             ></motion.div>
           </motion.div>
           
@@ -166,14 +175,16 @@ const Services: React.FC = () => {
             whileHover={{ 
               y: -10, 
               boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)",
-              backgroundColor: "rgba(235, 59, 90, 0.03)" 
+              backgroundColor: "rgba(0, 0, 0, 0.03)" 
             }}
+            role="listitem"
           >
             <div 
               className="service-icon"
               style={{ backgroundColor: serviceIcons[3].bg }}
+              aria-hidden="true"
             >
-              <span className="icon">{serviceIcons[3].icon}</span>
+              <span className="icon" role="img" aria-label={serviceIcons[3].alt}>{serviceIcons[3].icon}</span>
             </div>
             <h3>Отчётность и прогнозы</h3>
             <p>Составим для вас отчёт со всеми скриншотами и сделаем примерный прогноз количества отзывов для улучшения рейтинга.</p>
@@ -182,7 +193,7 @@ const Services: React.FC = () => {
               initial={{ width: 0 }}
               whileInView={{ width: "55%" }}
               transition={{ duration: 1, delay: 0.9 }}
-              style={{ backgroundColor: "#eb3b5a" }}
+              aria-hidden="true"
             ></motion.div>
           </motion.div>
           
@@ -192,14 +203,16 @@ const Services: React.FC = () => {
             whileHover={{ 
               y: -10, 
               boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)",
-              backgroundColor: "rgba(56, 103, 214, 0.03)" 
+              backgroundColor: "rgba(0, 0, 0, 0.03)" 
             }}
+            role="listitem"
           >
             <div 
               className="service-icon"
               style={{ backgroundColor: serviceIcons[4].bg }}
+              aria-hidden="true"
             >
-              <span className="icon">{serviceIcons[4].icon}</span>
+              <span className="icon" role="img" aria-label={serviceIcons[4].alt}>{serviceIcons[4].icon}</span>
             </div>
             <h3>Постоянная поддержка</h3>
             <p>С вами будет работать ваш личный менеджер и ответит на любой ваш вопрос в любое время.</p>
@@ -208,7 +221,7 @@ const Services: React.FC = () => {
               initial={{ width: 0 }}
               whileInView={{ width: "90%" }}
               transition={{ duration: 1, delay: 1.1 }}
-              style={{ backgroundColor: "#3867d6" }}
+              aria-hidden="true"
             ></motion.div>
           </motion.div>
         </motion.div>
@@ -220,7 +233,7 @@ const Services: React.FC = () => {
             animate={benefitsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h2 className="section-title">Для чего нужны отзывы</h2>
+            <h2 className="section-title" id="benefits-title">Для чего нужны отзывы</h2>
             <p className="section-subtitle">Положительные отзывы — мощный инструмент для развития вашего бизнеса</p>
           </motion.div>
           
@@ -229,6 +242,8 @@ const Services: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             animate={benefitsInView ? "visible" : "hidden"}
+            role="list"
+            aria-labelledby="benefits-title"
           >
             <motion.div 
               className="benefit-card"

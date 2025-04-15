@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Фон -->
+  <rect width="64" height="64" rx="12" fill="#000000"/>
+  
+  <!-- Буква K -->
+  <path d="M18 14L18 50M18 35L38 14M18 35L38 50" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Сердечко -->
+  <path d="M48 22C46 22 45 23 45 25C45 28 48 31 48 31C48 31 51 28 51 25C51 23 50 22 48 22Z" fill="#FFFFFF"/>
+</svg> 

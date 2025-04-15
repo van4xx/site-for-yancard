@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta name="last-modified" content="" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="KindReviews - сервис отзывов на популярных площадках. Размещаем отзывы на 2ГИС, Яндекс Картах, Google Maps и других платформах. Работаем без предоплаты с гарантией."
     />
+    <meta name="keywords" content="отзывы, 2ГИС, Яндекс Карты, Google Maps, купить отзывы, заказать отзывы, положительные отзывы, отзывы для бизнеса" />
+    <meta name="author" content="KindReviews" />
+    <meta property="og:title" content="KindReviews - сервис отзывов на популярных площадках" />
+    <meta property="og:description" content="Размещаем отзывы на 2ГИС, Яндекс Картах и Google Maps. Без предоплаты, с гарантией на 1 год." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kindreviews.ru" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,10 +33,17 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <link rel="canonical" href="https://kindreviews.ru" />
+    
+    <!-- Подключение шрифтов Google с предзагрузкой -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <title>KindReviews - Отзывы на 2ГИС, Яндекс Картах и Google Maps</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>Для работы сайта необходимо включить JavaScript в настройках вашего браузера.</noscript>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -39,5 +55,34 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    
+    <!-- Разметка Schema.org для улучшения SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "KindReviews",
+      "url": "https://kindreviews.ru",
+      "logo": "https://kindreviews.ru/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+7-924-003-8931",
+        "contactType": "customer service",
+        "availableLanguage": "Russian"
+      },
+      "sameAs": [
+        "https://t.me/MENEGKindReviews"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://kindreviews.ru",
+      "name": "KindReviews - сервис отзывов на популярных площадках",
+      "description": "Размещаем отзывы на 2ГИС, Яндекс Картах, Google Maps и других платформах. Без предоплаты, с гарантией на 1 год."
+    }
+    </script>
   </body>
 </html>
