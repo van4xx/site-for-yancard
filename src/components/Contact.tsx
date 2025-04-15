@@ -7,17 +7,52 @@ const Contact: React.FC = () => {
   const [phone, setPhone] = useState('');
   const [name, setName] = useState('');
   const [contactMethod, setContactMethod] = useState('call');
+  const [submitting, setSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Форма отправлена! Мы свяжемся с вами в ближайшее время.');
-    setPhone('');
-    setName('');
-    setContactMethod('call');
+    setSubmitting(true);
+    setSubmitMessage('');
+    setSubmitStatus(null);
+    
+    try {
+      // Create form data
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('phone', phone);
+      formData.append('contactMethod', contactMethod);
+      
+      // Send to PHP script
+      const response = await fetch('/send_to_telegram.php', {
+        method: 'POST',
+        body: formData
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitStatus('success');
+        setSubmitMessage(result.message || 'Форма отправлена! Мы свяжемся с вами в ближайшее время.');
+        setPhone('');
+        setName('');
+        setContactMethod('call');
+      } else {
+        setSubmitStatus('error');
+        setSubmitMessage(result.message || 'Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage('Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const platformOptions = [
@@ -57,17 +92,17 @@ const Contact: React.FC = () => {
           >
             <div className="info-card">
               <div className="info-header">
-                <div className="info-icon">📱</div>
+                <div className="info-icon">📞</div>
                 <h3>Контактная информация</h3>
               </div>
               <div className="info-content">
                 <div className="info-item">
                   <span className="info-label">Телефон:</span>
-                  <a href="tel:+79994442181" className="info-value">+7 (999) 444-21-81</a>
+                  <a href="tel:+79240038931" className="info-value">+7 (924) 003-89-31</a>
                 </div>
                 <div className="info-item">
-                  <span className="info-label">Email:</span>
-                  <a href="mailto:info@otzyvy.ru" className="info-value">info@otzyvy.ru</a>
+                  <span className="info-label">Telegram:</span>
+                  <a href="https://t.me/MENEGKindReviews" className="info-value">@MENEGKindReviews</a>
                 </div>
                 <div className="info-item">
                   <span className="info-label">График работы:</span>
@@ -77,20 +112,24 @@ const Contact: React.FC = () => {
               
               <div className="messenger-options">
                 <motion.a 
-                  href="#" 
+                  href="https://wa.me/79240038931" 
                   className="messenger-option whatsapp"
                   whileHover={{ scale: 1.1, y: -5 }}
                   whileTap={{ scale: 0.95 }}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="messenger-icon">📱</span>
                   <span>WhatsApp</span>
                 </motion.a>
                 
                 <motion.a 
-                  href="#" 
+                  href="https://t.me/MENEGKindReviews" 
                   className="messenger-option telegram"
                   whileHover={{ scale: 1.1, y: -5 }}
                   whileTap={{ scale: 0.95 }}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="messenger-icon">✈️</span>
                   <span>Telegram</span>
@@ -127,6 +166,12 @@ const Contact: React.FC = () => {
             <div className="form-card">
               <h3><span className="accent">Заполните форму</span> для связи</h3>
               <p>Наш менеджер свяжется с вами в течение часа</p>
+              
+              {submitStatus && (
+                <div className={`form-message ${submitStatus}`}>
+                  {submitMessage}
+                </div>
+              )}
               
               <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -206,10 +251,11 @@ const Contact: React.FC = () => {
                 <motion.button 
                   type="submit" 
                   className="submit-btn"
-                  whileHover={{ scale: 1.03, boxShadow: "0 10px 25px rgba(40, 167, 69, 0.3)" }}
+                  whileHover={{ scale: 1.03, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.2)" }}
                   whileTap={{ scale: 0.97 }}
+                  disabled={submitting}
                 >
-                  Отправить заявку
+                  {submitting ? 'Отправка...' : 'Отправить заявку'}
                 </motion.button>
                 
                 <div className="form-note">
