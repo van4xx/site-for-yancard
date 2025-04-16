@@ -1,7 +1,7 @@
 {
-  "short_name": "KindReviews",
-  "name": "KindReviews - Отзывы на 2ГИС, Яндекс Картах и Google Maps",
-  "description": "Размещаем отзывы на популярных площадках. Без предоплаты, с гарантией на 1 год.",
+  "short_name": "Отзывы PRO",
+  "name": "Отзывы PRO - Управление репутацией",
+  "description": "Профессиональное управление онлайн-репутацией и отзывами для вашего бизнеса",
   "icons": [
     {
       "src": "favicon.ico",
@@ -11,27 +11,46 @@
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
+  "theme_color": "#28a745",
+  "background_color": "#f0faf0",
+  "prefer_related_applications": false,
   "orientation": "portrait",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "lang": "ru-RU",
-  "dir": "ltr",
-  "categories": ["business", "marketing", "services", "reviews"],
-  "screenshots": [
+  "scope": "/",
+  "shortcuts": [
     {
-      "src": "screenshot1.jpg",
+      "name": "Связаться с нами",
+      "short_name": "Контакт",
+      "description": "Связаться с нашей командой",
+      "url": "/contact",
+      "icons": [{ "src": "contact-icon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Наши услуги",
+      "short_name": "Услуги",
+      "description": "Просмотреть наши услуги",
+      "url": "/services",
+      "src": "screenshot1.png",
       "sizes": "1280x720",
-      "type": "image/jpeg"
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Связаться с нами",
+      "url": "/#contact",
+      "description": "Быстрый способ связаться с нами"
     }
   ]
 } 
