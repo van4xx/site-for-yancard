@@ -230,6 +230,17 @@
   gap: 10px;
   text-decoration: none;
   color: white;
+  position: relative;
+  z-index: 10;
+}
+
+.messenger-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.messenger-btn:active {
+  transform: scale(0.95);
 }
 
 .messenger-icon {
@@ -295,6 +306,16 @@
   transition: all 0.3s ease;
   color: white;
   text-decoration: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.phone-number:hover {
+  transform: scale(1.05);
+}
+
+.phone-number:active {
+  transform: scale(0.95);
 }
 
 .phone-number::after {

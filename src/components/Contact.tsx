@@ -102,7 +102,6 @@ const Contact: React.FC = () => {
                   <a 
                     href="tel:+79240038931" 
                     className="info-value"
-                    onClick={() => window.location.href = 'tel:+79240038931'}
                   >
                     +7 (924) 003-89-31
                   </a>
@@ -114,10 +113,6 @@ const Contact: React.FC = () => {
                     className="info-value"
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => { 
-                      e.preventDefault(); 
-                      window.open('https://t.me/MENEGKindReviews', '_blank', 'noopener,noreferrer');
-                    }}
                   >
                     @MENEGKindReviews
                   </a>
@@ -129,10 +124,6 @@ const Contact: React.FC = () => {
                     className="info-value"
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => { 
-                      e.preventDefault(); 
-                      window.open('https://wa.me/79240038931', '_blank', 'noopener,noreferrer');
-                    }}
                   >
                     +7 (924) 003-89-31
                   </a>
@@ -144,29 +135,25 @@ const Contact: React.FC = () => {
               </div>
               
               <div className="messenger-options">
-                <motion.a 
+                <a 
                   href="https://wa.me/79240038931" 
                   className="messenger-option whatsapp"
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <WhatsAppIcon className="messenger-icon-svg" fill="#ffffff" />
                   <span>WhatsApp</span>
-                </motion.a>
+                </a>
                 
-                <motion.a 
+                <a 
                   href="https://t.me/MENEGKindReviews" 
                   className="messenger-option telegram"
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <TelegramIcon className="messenger-icon-svg" fill="#ffffff" />
                   <span>Telegram</span>
-                </motion.a>
+                </a>
               </div>
             </div>
 

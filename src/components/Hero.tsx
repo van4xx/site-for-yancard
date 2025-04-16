@@ -35,26 +35,22 @@ const Hero: React.FC = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
         >
-          <motion.a 
+          <a 
             href="https://wa.me/79240038931" 
             className="messenger-btn whatsapp pulse"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             target="_blank"
             rel="noopener noreferrer"
           >
             <WhatsAppIcon className="messenger-icon-svg" fill="#ffffff" /> WhatsApp
-          </motion.a>
-          <motion.a 
+          </a>
+          <a 
             href="https://t.me/MENEGKindReviews" 
             className="messenger-btn telegram pulse"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             target="_blank"
             rel="noopener noreferrer"
           >
             <TelegramIcon className="messenger-icon-svg" fill="#ffffff" /> Telegram
-          </motion.a>
+          </a>
         </motion.div>
         
         <motion.h2 
@@ -147,13 +143,12 @@ const Hero: React.FC = () => {
         >
           <div className="contact-info">
             <p>Напишите нашему менеджеру прямо сейчас:</p>
-            <motion.a 
+            <a 
               href="tel:+79240038931"
               className="phone-number"
-              whileHover={{ scale: 1.05 }}
             >
               +7 (924) 003-89-31
-            </motion.a>
+            </a>
           </div>
         </motion.div>
         
