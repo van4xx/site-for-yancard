@@ -1,0 +1,13 @@
+[2025-04-16 11:48:00] Script started
+[2025-04-16 11:48:00] Received data: name=ваппв, phone=вапва, contactMethod=call
+[2025-04-16 11:48:00] Sending request to Telegram API
+[2025-04-16 11:48:00] Response from Telegram: 
+[2025-04-16 11:48:00] Error: Failed to send message to Telegram. Response: null
+[2025-04-16 11:48:00] Script started
+[2025-04-16 11:48:00] Received data: name=ваппв, phone=вапва, contactMethod=call
+[2025-04-16 11:48:00] Sending request to Telegram API
+[2025-04-16 11:48:01] Response from Telegram: {"ok":true,"result":{"message_id":3,"from":{"id":7989864669,"is_bot":true,"first_name":"KindReviews","username":"kindreviews_bot"},"chat":{"id":1884010038,"first_name":"Artyom","username":"Temkaa003","type":"private"},"date":1744804080,"text":"\u2705 \u041d\u041e\u0412\u0410\u042f \u0417\u0410\u042f\u0412\u041a\u0410!\n\n\ud83d\udc64 \u0418\u043c\u044f: \u0432\u0430\u043f\u043f\u0432\n\ud83d\udcde \u0422\u0435\u043b\u0435\u0444\u043e\u043d: \u0432\u0430\u043f\u0432\u0430\n\ud83d\udcf1 \u0421\u043f\u043e\u0441\u043e\u0431 \u0441\u0432\u044f\u0437\u0438: call\n\ud83d\udd52 \u0412\u0440\u0435\u043c\u044f: 16.04.2025 11:48:00"}}
+[2025-04-16 11:48:01] Success: Message sent to Telegram
+[2025-04-16 11:48:09] Script started
+[2025-04-16 11:48:09] Received data: name=ывапывп, phone=вапавп, contactMethod=telegram
+[2025-04-16 11:48:09] Sending request to Telegram API

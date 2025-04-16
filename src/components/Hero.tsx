@@ -135,28 +135,11 @@ const Hero: React.FC = () => {
           </div>
         </motion.div>
         
-        <motion.div 
-          className="hero-cta"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-        >
-          <div className="contact-info">
-            <p>Напишите нашему менеджеру прямо сейчас:</p>
-            <a 
-              href="tel:+79240038931"
-              className="phone-number"
-            >
-              +7 (924) 003-89-31
-            </a>
-          </div>
-        </motion.div>
-        
         <div className="scroll-down">
           <div className="mouse">
             <div className="wheel"></div>
           </div>
-          <div className="scroll-text">Узнать больше</div>
+          <span className="scroll-text">Узнать больше</span>
         </div>
       </div>
       
