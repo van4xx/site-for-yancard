@@ -36,7 +36,7 @@ const Pricing: React.FC = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          Наши тарифы на отзывы в 2ГИС
+          Наши тарифы на отзывы
         </motion.h2>
         
         <motion.p 
@@ -59,11 +59,11 @@ const Pricing: React.FC = () => {
             variants={cardVariants}
             whileHover={{ y: -15, boxShadow: "0 15px 30px rgba(0, 0, 0, 0.15)" }}
           >
-            <div className="card-badge">Базовый</div>
-            <h3>до 9 отзывов</h3>
+            <div className="card-badge">Стандартный</div>
+            <h3>Отзыв на любой площадке</h3>
             <div className="price">
-              <span className="amount">650₽</span>
-              <span className="period">за отзыв в 2ГИС</span>
+              <span className="amount">450₽</span>
+              <span className="period">за один отзыв</span>
             </div>
             
             <ul className="features">
@@ -87,46 +87,18 @@ const Pricing: React.FC = () => {
             variants={cardVariants}
             whileHover={{ y: -15, boxShadow: "0 15px 30px rgba(0, 0, 0, 0.15)" }}
           >
-            <div className="card-badge popular">Популярный</div>
-            <h3>от 10 до 49 отзывов</h3>
+            <div className="card-badge popular">Конкуренту</div>
+            <h3>Отзыв на странице конкурента</h3>
             <div className="price">
-              <span className="amount">550₽</span>
-              <span className="period">за отзыв в 2ГИС</span>
+              <span className="amount">1000₽</span>
+              <span className="period">за один отзыв</span>
             </div>
             
             <ul className="features">
-              <li>Составим отзывы и опубликуем</li>
-              <li>Сделаем отчёт и прогноз рейтинга</li>
-              <li>Дадим гарантию на каждый отзыв</li>
-              <li>Личный менеджер</li>
-            </ul>
-            
-            <motion.button 
-              className="btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Заказать
-            </motion.button>
-          </motion.div>
-          
-          <motion.div 
-            className="pricing-card"
-            variants={cardVariants}
-            whileHover={{ y: -15, boxShadow: "0 15px 30px rgba(0, 0, 0, 0.15)" }}
-          >
-            <div className="card-badge">Премиум</div>
-            <h3>от 50 отзывов</h3>
-            <div className="price">
-              <span className="amount">500₽</span>
-              <span className="period">за отзыв в 2ГИС</span>
-            </div>
-            
-            <ul className="features">
-              <li>Составим отзывы и опубликуем</li>
-              <li>Сделаем отчёт и прогноз рейтинга</li>
-              <li>Дадим гарантию на каждый отзыв</li>
-              <li>Личный менеджер</li>
+              <li>Размещение отзыва у конкурента</li>
+              <li>Контроль за модерацией</li>
+              <li>Гарантия публикации</li>
+              <li>Полная анонимность</li>
             </ul>
             
             <motion.button 

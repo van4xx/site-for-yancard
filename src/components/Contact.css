@@ -175,6 +175,13 @@
   font-size: 1.2rem;
 }
 
+.messenger-icon-svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 /* Platforms section */
 .platform-container {
   background-color: white;
@@ -349,6 +356,13 @@
   font-weight: 600;
   font-size: 0.95rem;
   color: var(--text-color);
+}
+
+.method-icon-svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
 }
 
 .submit-btn {

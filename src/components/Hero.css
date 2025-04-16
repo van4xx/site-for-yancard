@@ -236,6 +236,13 @@
   font-size: 1.4rem;
 }
 
+.messenger-icon-svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 .whatsapp {
   background-color: #25D366;
 }

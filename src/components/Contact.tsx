@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Contact.css';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { WhatsAppIcon, TelegramIcon } from './icons';
 
 const Contact: React.FC = () => {
   const [phone, setPhone] = useState('');
@@ -98,11 +99,40 @@ const Contact: React.FC = () => {
               <div className="info-content">
                 <div className="info-item">
                   <span className="info-label">Телефон:</span>
-                  <a href="tel:+79240038931" className="info-value">+7 (924) 003-89-31</a>
+                  <motion.a 
+                    href="tel:+79240038931" 
+                    className="info-value"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    +7 (924) 003-89-31
+                  </motion.a>
                 </div>
                 <div className="info-item">
                   <span className="info-label">Telegram:</span>
-                  <a href="https://t.me/MENEGKindReviews" className="info-value">@MENEGKindReviews</a>
+                  <motion.a 
+                    href="https://t.me/MENEGKindReviews" 
+                    className="info-value"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    @MENEGKindReviews
+                  </motion.a>
+                </div>
+                <div className="info-item">
+                  <span className="info-label">WhatsApp:</span>
+                  <motion.a 
+                    href="https://wa.me/79240038931" 
+                    className="info-value"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    +7 (924) 003-89-31
+                  </motion.a>
                 </div>
                 <div className="info-item">
                   <span className="info-label">График работы:</span>
@@ -119,7 +149,7 @@ const Contact: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="messenger-icon">📱</span>
+                  <WhatsAppIcon className="messenger-icon-svg" />
                   <span>WhatsApp</span>
                 </motion.a>
                 
@@ -131,7 +161,7 @@ const Contact: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="messenger-icon">✈️</span>
+                  <TelegramIcon className="messenger-icon-svg" />
                   <span>Telegram</span>
                 </motion.a>
               </div>
@@ -231,7 +261,9 @@ const Contact: React.FC = () => {
                         onChange={() => setContactMethod('whatsapp')}
                       />
                       <span className="method-checkmark"></span>
-                      <span className="method-text">WhatsApp</span>
+                      <span className="method-text">
+                        <WhatsAppIcon className="method-icon-svg" /> WhatsApp
+                      </span>
                     </label>
                     
                     <label className="method-option">
@@ -243,7 +275,9 @@ const Contact: React.FC = () => {
                         onChange={() => setContactMethod('telegram')}
                       />
                       <span className="method-checkmark"></span>
-                      <span className="method-text">Telegram</span>
+                      <span className="method-text">
+                        <TelegramIcon className="method-icon-svg" /> Telegram
+                      </span>
                     </label>
                   </div>
                 </div>
