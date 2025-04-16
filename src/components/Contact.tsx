@@ -99,40 +99,43 @@ const Contact: React.FC = () => {
               <div className="info-content">
                 <div className="info-item">
                   <span className="info-label">Телефон:</span>
-                  <motion.a 
+                  <a 
                     href="tel:+79240038931" 
                     className="info-value"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    onClick={() => window.location.href = 'tel:+79240038931'}
                   >
                     +7 (924) 003-89-31
-                  </motion.a>
+                  </a>
                 </div>
                 <div className="info-item">
                   <span className="info-label">Telegram:</span>
-                  <motion.a 
+                  <a 
                     href="https://t.me/MENEGKindReviews" 
                     className="info-value"
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    onClick={(e) => { 
+                      e.preventDefault(); 
+                      window.open('https://t.me/MENEGKindReviews', '_blank', 'noopener,noreferrer');
+                    }}
                   >
                     @MENEGKindReviews
-                  </motion.a>
+                  </a>
                 </div>
                 <div className="info-item">
                   <span className="info-label">WhatsApp:</span>
-                  <motion.a 
+                  <a 
                     href="https://wa.me/79240038931" 
                     className="info-value"
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    onClick={(e) => { 
+                      e.preventDefault(); 
+                      window.open('https://wa.me/79240038931', '_blank', 'noopener,noreferrer');
+                    }}
                   >
                     +7 (924) 003-89-31
-                  </motion.a>
+                  </a>
                 </div>
                 <div className="info-item">
                   <span className="info-label">График работы:</span>
@@ -149,7 +152,7 @@ const Contact: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <WhatsAppIcon className="messenger-icon-svg" />
+                  <WhatsAppIcon className="messenger-icon-svg" fill="#ffffff" />
                   <span>WhatsApp</span>
                 </motion.a>
                 
@@ -161,7 +164,7 @@ const Contact: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <TelegramIcon className="messenger-icon-svg" />
+                  <TelegramIcon className="messenger-icon-svg" fill="#ffffff" />
                   <span>Telegram</span>
                 </motion.a>
               </div>
@@ -262,7 +265,7 @@ const Contact: React.FC = () => {
                       />
                       <span className="method-checkmark"></span>
                       <span className="method-text">
-                        <WhatsAppIcon className="method-icon-svg" /> WhatsApp
+                        <WhatsAppIcon className="method-icon-svg" fill="#28a745" /> WhatsApp
                       </span>
                     </label>
                     
@@ -276,7 +279,7 @@ const Contact: React.FC = () => {
                       />
                       <span className="method-checkmark"></span>
                       <span className="method-text">
-                        <TelegramIcon className="method-icon-svg" /> Telegram
+                        <TelegramIcon className="method-icon-svg" fill="#0088cc" /> Telegram
                       </span>
                     </label>
                   </div>

@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <WhatsAppIcon className="messenger-icon-svg" /> WhatsApp
+            <WhatsAppIcon className="messenger-icon-svg" fill="#ffffff" /> WhatsApp
           </motion.a>
           <motion.a 
             href="https://t.me/MENEGKindReviews" 
@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <TelegramIcon className="messenger-icon-svg" /> Telegram
+            <TelegramIcon className="messenger-icon-svg" fill="#ffffff" /> Telegram
           </motion.a>
         </motion.div>
         

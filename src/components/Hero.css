@@ -241,6 +241,8 @@
   height: 20px;
   margin-right: 8px;
   vertical-align: middle;
+  fill: #ffffff;
+  display: inline-block;
 }
 
 .whatsapp {
